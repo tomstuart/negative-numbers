@@ -23,7 +23,11 @@ class SignedNumber
     if sign == other.sign
       SignedNumber.new(sign, size + other.size)
     else
-      SignedNumber.new(sign, size - other.size)
+      if size >= other.size
+        SignedNumber.new(sign, size - other.size)
+      else
+        SignedNumber.new(sign == :positive ? :negative : :positive, other.size - size)
+      end
     end
   end
 
