@@ -20,7 +20,7 @@ class SignedNumber
   end
 
   def +(other)
-    fail 'unimplemented'
+    SignedNumber.new(sign, size + other.size)
   end
 
   def -(other)
