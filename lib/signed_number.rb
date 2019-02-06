@@ -16,7 +16,7 @@ class SignedNumber
   end
 
   def ==(other)
-    sign == other.sign && size == other.size
+    (sign == other.sign || size.zero?) && size == other.size
   end
 
   def +(other)
