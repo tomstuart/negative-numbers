@@ -52,7 +52,11 @@ class SignedNumber
   end
 
   def <(other)
-    size < other.size
+    if sign == :positive
+      size < other.size
+    else
+      other.size < size
+    end
   end
 
   protected
