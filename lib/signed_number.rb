@@ -4,11 +4,15 @@ class SignedNumber
   using NoNegativeNumbers
 
   def self.positive(number)
-    fail 'unimplemented'
+    new(0, number)
   end
 
   def self.negative(number)
-    fail 'unimplemented'
+    new(number, 0)
+  end
+
+  def initialize(left, right)
+    @left, @right = left, right
   end
 
   def ==(other)
@@ -30,4 +34,8 @@ class SignedNumber
   def <(other)
     fail 'unimplemented'
   end
+
+  protected
+
+  attr_reader :left, :right
 end
