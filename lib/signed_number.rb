@@ -32,10 +32,14 @@ class SignedNumber
   end
 
   def -(other)
-    if size >= other.size
-      SignedNumber.new(sign, size - other.size)
+    if sign == other.sign
+      if size >= other.size
+        SignedNumber.new(sign, size - other.size)
+      else
+        SignedNumber.new(sign == :positive ? :negative : :positive, other.size - size)
+      end
     else
-      SignedNumber.new(sign == :positive ? :negative : :positive, other.size - size)
+      SignedNumber.new(sign, size + other.size)
     end
   end
 
