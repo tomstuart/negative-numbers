@@ -16,7 +16,7 @@ class SignedNumber
   end
 
   def ==(other)
-    fail 'unimplemented'
+    left + other.right == other.left + right
   end
 
   def +(other)
