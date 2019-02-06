@@ -59,7 +59,7 @@ class SignedNumber
         other.size < size
       end
     else
-      sign == :negative
+      sign == :negative && !(size.zero? && other.size.zero?)
     end
   end
 
