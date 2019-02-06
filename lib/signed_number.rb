@@ -24,7 +24,7 @@ class SignedNumber
   end
 
   def -(other)
-    fail 'unimplemented'
+    SignedNumber.new(left + other.right, other.left + right)
   end
 
   def *(other)
