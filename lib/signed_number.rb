@@ -35,7 +35,7 @@ class SignedNumber
   end
 
   def <(other)
-    fail 'unimplemented'
+    other.left + right < left + other.right
   end
 
   protected
