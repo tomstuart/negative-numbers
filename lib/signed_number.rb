@@ -44,7 +44,11 @@ class SignedNumber
   end
 
   def *(other)
-    SignedNumber.new(:positive, size * other.size)
+    if sign == other.sign
+      SignedNumber.new(:positive, size * other.size)
+    else
+      SignedNumber.new(:negative, size * other.size)
+    end
   end
 
   def <(other)
