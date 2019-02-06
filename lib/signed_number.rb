@@ -28,7 +28,10 @@ class SignedNumber
   end
 
   def *(other)
-    fail 'unimplemented'
+    SignedNumber.new(
+      left * other.right + other.left * right,
+      left * other.left + right * other.right
+    )
   end
 
   def <(other)
