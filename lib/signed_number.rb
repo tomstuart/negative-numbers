@@ -44,7 +44,7 @@ class SignedNumber
   end
 
   def *(other)
-    fail 'unimplemented'
+    SignedNumber.new(:positive, size * other.size)
   end
 
   def <(other)
