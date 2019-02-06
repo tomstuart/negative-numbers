@@ -20,7 +20,11 @@ class SignedNumber
   end
 
   def +(other)
-    SignedNumber.new(sign, size + other.size)
+    if sign == other.sign
+      SignedNumber.new(sign, size + other.size)
+    else
+      SignedNumber.new(sign, size - other.size)
+    end
   end
 
   def -(other)
