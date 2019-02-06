@@ -52,7 +52,7 @@ class SignedNumber
   end
 
   def <(other)
-    fail 'unimplemented'
+    size < other.size
   end
 
   protected
